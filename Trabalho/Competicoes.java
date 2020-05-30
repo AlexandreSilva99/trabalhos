@@ -11,19 +11,19 @@ public class Competicoes {
 	private String nome;
 	private Date dataInicio;
 	private Date dataFim;
-	private List<Equipas> equipasEscalao;
-	private List<Clubes> equipasParticipantes;
-	private List<Jogos> jogos;
+	private List<Equipas> equipasEscalao = new ArrayList<Equipas>();
+	//private List<Clubes> equipasParticipantes;
+	private List<Jogos> jogos = new ArrayList<Jogos>();
 
     // =======================================================
     // ============ ACESSORES e MODIFICADORES ===============
     // =======================================================
 
-	public int getCodigoIdentificador() {
+	public int getcodigoIdentificador() {
 		return codigoIdentificador;
 	}
 
-	public void setCodigoIdentificador(int codigoIdentificador) {
+	public void setcodigoIdentificador(int codigoIdentificador) {
 		this.codigoIdentificador = codigoIdentificador;
 	}
 
@@ -59,13 +59,13 @@ public class Competicoes {
 		this.equipasEscalao = equipasEscalao;
 	}
 
-	public List<Clubes> getEquipasParticipantes() {
-		return equipasParticipantes;
-	}
+	//public List<Clubes> getEquipasParticipantes() {
+	//	return equipasParticipantes;
+	//}
 
-	public void setEquipasParticipantes(List<Clubes> equipasParticipantes) {
-		this.equipasParticipantes = equipasParticipantes;
-	}
+	//public void setEquipasParticipantes(List<Clubes> equipasParticipantes) {
+	//	this.equipasParticipantes = equipasParticipantes;
+	//}
 
 	public List<Jogos> getJogos() {
 		return jogos;
@@ -94,7 +94,7 @@ public class Competicoes {
 		this.dataInicio = dataInicio;
 		this.dataFim = dataFim;
 		this.equipasEscalao = new ArrayList<Equipas>();
-		this.equipasParticipantes = new ArrayList<Clubes>();
+		//this.equipasParticipantes = new ArrayList<Clubes>();
 		this.jogos = new ArrayList<Jogos>();
 	}
 
@@ -102,12 +102,12 @@ public class Competicoes {
     // =================== .COMPORTAMENTOS ==================
     // =======================================================
 
-	public void addEquipa(Equipas equipasParticipantes) {
-		this.equipasParticipantes.add(equipasParticipantes);
+	public void addEquipa(Equipas equipasEscalao) {
+		this.equipasEscalao.add(equipasEscalao);	
 	}
 	
-	public void removeEquipa(Equipas equipasParticipantes) {
-		
+	public void removeEquipa(Equipas equipasEscalao) {
+		this.equipasEscalao.remove(equipasEscalao);
 	}
 	
 	public void addJogo(Jogos jogos) {
@@ -115,7 +115,7 @@ public class Competicoes {
 	}
 	
 	public void removeJogo(Jogos jogos) {
-		
+		this.jogos.remove(jogos);
 	}
 	
     // =======================================================
@@ -127,8 +127,7 @@ public class Competicoes {
 	@Override
 	public String toString() {
 		return "Competicoes [codigoIdentificador=" + codigoIdentificador + ", nome=" + nome + ", dataInicio=" + dataInicio
-				+ ", dataFim=" + dataFim + ", equipasEscalao=" + equipasEscalao + ", equipasParticipantes=" + equipasParticipantes
-				+ ", jogos=" + jogos + "]";
+				+ ", dataFim=" + dataFim + ", equipasEscalao=" + equipasEscalao + ", jogos=" + jogos + "]";
 	}
 
     // ----> equals()
